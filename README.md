@@ -5,6 +5,14 @@ Collection of personal terminal-related dotfiles:
 * [Starship prompt](https://starship.rs/)
 * etc...
 
+# Usage:
+
+* Install the terminal, shell, and prompt listed above
+* Clone the repo
+* Put the files in your `~/.config/` or equivalent. (Might have to change some paths if this is not the case, e.g. background image in kitty.conf)
+
+As for font, you might have to change that in the kitty.conf (or download the font I'm using from [nerd fonts](https://github.com/ryanoasis/nerd-fonts))
+
 # Disclaimer:
 There are a lot of garbage in these that are either hard-coded for my personal needs, WIP, legacy left-overs, half-assed, or in need of porting and/or proper integration (e.g. old bash/zsh stuff that I haven't adapted to fish yet).
 
