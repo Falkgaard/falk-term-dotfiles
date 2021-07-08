@@ -13,3 +13,5 @@ Also, my system consists of Linux (Manjaro running sxhkd+bspwm+picom+nvim+etc...
 So use these dotfiles at your own risk (but feel free to modify them as you see fit).
 
 But if you do extend, say, the Starship configuration in a style-compliant way to support the things that I haven't bothered with adding theming for, please let me know and I might add them for future interested parties. 👍
+
+And please report any bugs you find. Thanks!
