@@ -1,0 +1,189 @@
+format = """
+\
+$character\
+$username\
+$hostname\
+$status\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$cmake\
+$helm\
+$memory_usage\
+$env_var\
+$time\
+$jobs\
+$cmd_duration\
+$line_break\
+$battery\
+\n\
+[-> ](fg:252)"""
+
+# TODO (removed because I don't really care about them)
+# $python\
+# $nix_shell\
+# $lua\
+# $aws\
+# $openstack\
+# $package\
+
+# NOTE: there might still be some modules included in format above that I haven't configured
+#       since I generally make tweaks on a per need basis when I encounter the issues.
+
+
+
+scan_timeout       = 10 # wait 10ms for Starship to CWD files
+add_newline        = false
+
+
+
+[character]
+format             = "$symbol"
+success_symbol     = "[](fg:155)[](bold bg:155 fg:22)[█](fg:155)"
+error_symbol       = "[](fg:210)[x](bold bg:210 fg:52)[█](fg:210)"
+vicmd_symbol       = "[](fg:3  )[](bold bg:3   fg:94)[█](fg:3  )"
+
+[username]
+format             = "[ $user](bold fg:231 bg:236)[@](fg:245 bg:236)"
+style_user         = "white bold"
+style_root         = "yellow bold"
+show_always        = true
+disabled           = false
+
+[hostname]
+format             = "[$hostname](fg:241 bg:236)"
+ssh_only           = false
+trim_at            = ".companyname.com"
+disabled           = false
+
+
+
+[directory]
+format             = "[](fg:236)[━](fg:241)[](fg:236)[$path]($style)[$read_only]($read_only_style)[](fg:236)"
+style              = "fg:222 bg:236"
+truncation_length  = 8
+truncate_to_repo   = true
+truncation_symbol  = "…/"
+read_only          = " " # alternatively: 🔒
+read_only_style    = "fg:231 bg:236"
+disabled           = false
+
+
+# IMPORTANT: There's a bug somewhere in these Git parts.
+#            The closing '' symbol doesn't appear on the end if there's no changes to the repo.
+[git_branch]
+format             = "[━](fg:241)[](fg:236)[$branch $symbol]($style)"
+style              = "fg:231 bg:236"
+symbol             = ""
+truncation_length  = "32"
+truncation_symbol  = "…"
+always_show_remote = false # ?
+only_attached      = false # ?
+disabled           = false
+
+[git_commit]
+format             = "[ $hash]($style)" # [\\($tag\\)]($style)"
+style              = "fg:241 bg:236"
+commit_has_length  = 64
+tag_symbol         = "🏷 "
+tag_disabled       = false
+only_detached      = false
+disabled           = true
+
+[git_state]
+format             = '\([$state($progress_current/$progress_total)]($style)\)'
+rebase             = "REBASING"
+merge              = "MERGING"
+revert             = "REVERTING"
+cherry_pick        = "CHERRY-PICKING"
+bisect             = "BISECTING"
+am                 = "AM"
+am_or_rebase       = "AM/REBASE"
+style              = "bold yellow bg:236"
+disabled           = false
+
+[git_status]
+format             = '([$all_status$ahead_behind]($style)[](fg:236))'
+style              = "bold white bg:236"
+conflicted         = " =$count"
+ahead              = " ⇡$count"
+behind             = " ⇣$count"
+diverged           = " [$ahead_count](green)⇕[$behind_count](red bg:236)"
+untracked          = " [$count](purple bg:236)"
+stashed            = " $count"
+modified           = " [$count](yellow bg:236)"
+staged             = " +$count"
+renamed            = " »$count"
+deleted            = " [$count✘](red bg:236)"
+disabled           = false
+
+
+
+[cmake]
+format             = "[━](fg:241)[](fg:236)[CMake $symbol$version]($style)[](fg:236)"
+style              = "green bg:236"
+symbol             = ""
+disabled           = false
+
+
+
+#[custom]          # WIP!
+#format            = "${custom.tty}"
+#disabled          = false
+
+[custom.tty]       # WIP!
+format             = "[$symbol$output]($style)"
+style              = "white"
+description        = "Shows the current terminal's tty/pts."
+#shell             = ["sh", "-Command", "-"]
+when               = ""
+files              = []
+directories        = []
+extensions         = []
+symbol             = ""
+command            = "tty_temp=$(tty) ; echo ${tty_temp:5}"
+                   # 'echo x; tty | egrep -o "pts/[0-9]+"'
+                   #  set tty_tmp (tty); echo (string sub -s 6 $tty_tmp)
+disabled           = false
+
+
+
+[status]
+format             = '[ $symbol$status]($style)'
+style              = "fg:210 bg:236"
+symbol             = ""
+disabled           = false
+
+
+
+[time]
+format             = "[━](fg:241)[](fg:236)[$time]($style)[](fg:236)"
+style              = "fg:246 bg:236"
+time_format        = "%Y-%m-%d%T"
+use_12h            = false
+disabled           = false
+
+
+
+[jobs]
+format             = "[━](fg:241)[](fg:236)[$symbol$number]($style)[](fg:236)"
+style              = "fg:231 bg:236"
+symbol             = "華"
+threshold          = 0
+disabled           = false
+
+
+
+[cmd_duration]
+format             = " [$duration]($style)"
+style              = "yellow"
+min_time           = 0
+show_milliseconds  = true
+show_notifications = false
+min_time_to_notify = 40_000
+disabled           = false
+
