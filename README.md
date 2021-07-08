@@ -13,6 +13,16 @@ Collection of personal terminal-related dotfiles:
 
 As for font, you might have to change that in the kitty.conf (or download the font I'm using from [nerd fonts](https://github.com/ryanoasis/nerd-fonts))
 
+# TODO:
+
+* Clean up files...
+
+* Add screenshots/gif demo?
+
+* Add more dotfiles?
+
+* ...
+
 # Disclaimer:
 There are a lot of garbage in these that are either hard-coded for my personal needs, WIP, legacy left-overs, half-assed, or in need of porting and/or proper integration (e.g. old bash/zsh stuff that I haven't adapted to fish yet).
 
