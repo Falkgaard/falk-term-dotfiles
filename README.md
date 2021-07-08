@@ -1,8 +1,14 @@
 # falk-term-dotfiles
-Collection of personal terminal-related dotfiles (KiTTy, fish, Starship, etc...)
+Collection of personal terminal-related dotfiles:
+* [KiTTy terminal](https://sw.kovidgoyal.net/kitty/)
+* [fish shell](https://fishshell.com/)
+* [Starship prompt](https://starship.rs/)
+* etc...
 
 # Disclaimer:
 There are a lot of garbage in these that are either hard-coded for my personal needs, WIP, legacy left-overs, half-assed, or in need of porting and/or proper integration (e.g. old bash/zsh stuff that I haven't adapted to fish yet).
+
+Also, my system consists of Linux (Manjaro running sxhkd+bspwm+picom+nvim+etc...), so I'm not quite sure how portable certain things will be to systems running Mac, Windows Terminal, etc. (Also, if there's any interest, I might start adding more dotfiles here later on.)
 
 So use these dotfiles at your own risk (but feel free to modify them as you see fit).
 
