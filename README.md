@@ -1,5 +1,5 @@
 # falk-term-dotfiles
-Collection of personal terminal-related dotfiles:
+Collection of personal terminal-related dotfiles for:
 * [KiTTy terminal](https://sw.kovidgoyal.net/kitty/)
 * [fish shell](https://fishshell.com/)
 * [Starship prompt](https://starship.rs/)
