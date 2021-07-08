@@ -9,7 +9,7 @@ Collection of personal terminal-related dotfiles for:
 
 * Install the terminal, shell, and prompt listed above
 * Clone the repo
-* Put the files in your `~/.config/` or equivalent. (Might have to change some paths if this is not the case, e.g. background image in kitty.conf)
+* Put the files in your `~/.config/` or equivalent (or symlink to them). Might have to change some paths if this is not the case, e.g. background image in kitty.conf
 
 As for the font, you might have to change that in the kitty.conf (or download the font I'm using from [nerd fonts](https://github.com/ryanoasis/nerd-fonts))
 
